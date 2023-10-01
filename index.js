@@ -18,6 +18,10 @@ app.get('/', (req, res) => {
     res.render('home.handlebars')
 })
 
+app.get('/addOrder', (req, res) => {
+    res.render('addOrder.handlebars')
+})
+
 app.get('/orders', (req, res) => {
     const query = 'SELECT * FROM orders'
 
