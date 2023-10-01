@@ -3,15 +3,18 @@
 <form action="/orders/insertOrder" method="post" class="form">
     <div class="form_control">
         <label for="holder">Pedido:</label>
-        <input type="text" name="holder" id="holder" placeholder="Digite o nome do pedido">
+        <input type="text" name="holder" id="holder" placeholder="Digite o nome do pedido" required>
     </div>
     <div class="form_control">
         <label for="edition">Edição:</label>
-        <input type="text" name="edition" id="edition" placeholder="ex: AV60">
+        <input type="text" name="edition" id="edition" placeholder="ex: AV60" required>
     </div>
     <div class="form_control">
         <label for="order">Item pedido: (Insira nome do item com núneração da edição)</label>
-        <input type="text" name="order" id="order" placeholder="ex: 001 Black Panter">
+        <input type="text" name="order" id="order" placeholder="ex: 001 Black Panter" required>
     </div>
-    <input type="submit" value="Pedir">
+    <div>
+        <input type="submit" value="Pedir">
+    </div>
+        <a href="/orders"><button>Ver Pedidos</button></a>
 </form>
