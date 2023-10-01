@@ -1,0 +1,17 @@
+<h1>Faça Seu Pedido</h1>
+
+<form action="/orders/insertOrder" method="post" class="form">
+    <div class="form_control">
+        <label for="holder">Pedido:</label>
+        <input type="text" name="holder" id="holder" placeholder="Digite o nome do pedido">
+    </div>
+    <div class="form_control">
+        <label for="edition">Edição:</label>
+        <input type="text" name="edition" id="edition" placeholder="ex: AV60">
+    </div>
+    <div class="form_control">
+        <label for="order">Item pedido: (Insira nome do item com núneração da edição)</label>
+        <input type="text" name="order" id="order" placeholder="ex: 001 Black Panter">
+    </div>
+    <input type="submit" value="Pedir">
+</form>

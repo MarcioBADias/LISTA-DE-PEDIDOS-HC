@@ -1,0 +1,11 @@
+<h1>Pedidos Realizados</h1>
+<ul class="form">
+    {{#each orders}}
+    <li>
+        #{{this.id}} <strong>{{this.holder}}</strong>: <span class="edition">{{this.edition}}</span> {{this.order}}
+    </li>
+    {{/each}}
+    <div>
+        <a href="/"><button>Voltar</button></a>
+    </div>
+</ul>
