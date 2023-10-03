@@ -14,9 +14,6 @@ app.use(express.urlencoded({
 }))
 app.use(express.json())
 
-app.get('/', (req, res) => {
-    res.render('home.handlebars')
-})
 
 app.get('/addOrder', (req, res) => {
     res.render('addOrder.handlebars')
@@ -24,17 +21,39 @@ app.get('/addOrder', (req, res) => {
 
 app.get('/orders', (req, res) => {
     const query = 'SELECT * FROM orders'
-
+    
     conn.query(query, (err, data) => {
         if(err){
             console.log(err)
             return
         }
-
+        
         const orders = data
         
         res.render('orders.handlebars', { orders })
     })
+})
+
+app.get('/orders/:order', (req, res) => {
+    const idorders = req.params.order
+
+    const query = `SELECT * FROM orders WHERE order = ${idorders}`
+
+    conn.query(query, (err, data) => {
+        if (err){
+            console.log(err)
+            return
+        }
+
+        const selectOrder = data
+        console.log(data)
+
+        res.render('order.handlebars', { selectOrder })
+    })
+})
+
+app.get('/', (req, res) => {
+    res.render('home.handlebars')
 })
 
 app.post('/orders/insertOrder', (req, res) => {

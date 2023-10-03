@@ -6,7 +6,8 @@
     </div>
     {{#each orders}}
     <li>
-        #{{this.id}} <strong>{{this.holder}}</strong>: <span class="edition">{{this.edition}}</span> {{this.order}}
+        #{{this.id}} <strong>{{this.holder}}</strong>: <span class="edition">{{this.edition}}</span> 
+        <a href="/orders/{{this.order}}">{{this.order}}</a>
     </li>
     {{/each}}
     <div>
